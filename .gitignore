@@ -4,7 +4,8 @@ out/
 !**/src/test/**/out/
 *.idea
 *.iml
-
+.Task1
+*.Main.java
 ### Eclipse ###
 .apt_generated
 .classpath
