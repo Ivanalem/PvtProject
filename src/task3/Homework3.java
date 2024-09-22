@@ -21,46 +21,59 @@ public class Homework3 {
         System.out.println("Задание № 1");
         System.out.println("Введите положительное трехзначное число: ");
         int scP = scanNum();
-        int deliver1 = (scP / 100) * 100;
-        int deliver2 = ((scP / 10) % 10) * 10;
-        int deliver3 = scP % 10;
-        System.out.println("Введенное число " + scP + " имеет вид: " + deliver1 + "+" + deliver2 + "+" + deliver3);
+        if(checkNum(scP)) {
+            int deliver1 = (scP / 100) * 100;
+            int deliver2 = ((scP / 10) % 10) * 10;
+            int deliver3 = scP % 10;
+            System.out.println("Введенное число " + scP + " имеет вид: " + deliver1 + "+" + deliver2 + "+" + deliver3);
+        }else if (!checkNum(scP)){
+            System.out.println("Программа не выполнена!");
+        }
     }
 
     private static void task2() {//Степень четности
         System.out.println("Задание № 2");
         System.out.println("Введите положительное трехзначное число: ");
         int scP = scanNum();
-        int deliver1 = (scP / 100);
-        int deliver2 = (scP / 10) % 10;
-        int deliver3 = scP % 10;
-        //Проверка на четность
-        int count = 0;
-        if (deliver1 % 2 == 0) {
-            count++;
+        if (checkNum(scP)) {
+            int deliver1 = (scP / 100);
+            int deliver2 = (scP / 10) % 10;
+            int deliver3 = scP % 10;
+            //Проверка на четность
+            int count = 0;
+            if (deliver1 % 2 == 0) {
+                count++;
+            }
+            if (deliver2 % 2 == 0) {
+                count++;
+            }
+            if (deliver3 % 2 == 0) {
+                count++;
+            }
+            System.out.println("Введено число: " + scP + ", степень его четности составляет: " + count);
+        } else if (!checkNum(scP)) {
+            System.out.println("Программа не выполнена!");
         }
-        if (deliver2 % 2 == 0) {
-            count++;
-        }
-        if (deliver3 % 2 == 0) {
-            count++;
-        }
-        System.out.println("Введено число: " + scP + ", степень его четности составляет: " + count);
     }
+
 
 
     private static void task3() {
         System.out.println("Задание № 3");
         System.out.println("Введите положительное трехзначное число: ");
         int scP = scanNum();
-        int deliver1 = (scP / 100);
-        int deliver3 = scP % 10;
-        if (deliver1 == deliver3) {
-            System.out.println("Введенное число " + scP + " является симметричным, т.к первая " + deliver1 +
-                    " и последняя " + deliver3 + " цифра - равны");
-        } else {
-            System.out.println("Введенное число " + scP + " не является симметричным, т.к первая " + deliver1 +
-                    " и последняя " + deliver3 + " цифра - не равны");
+        if (checkNum(scP)) {
+            int deliver1 = (scP / 100);
+            int deliver3 = scP % 10;
+            if (deliver1 == deliver3) {
+                System.out.println("Введенное число " + scP + " является симметричным, т.к первая " + deliver1 +
+                        " и последняя " + deliver3 + " цифра - равны");
+            } else {
+                System.out.println("Введенное число " + scP + " не является симметричным, т.к первая " + deliver1 +
+                        " и последняя " + deliver3 + " цифра - не равны");
+            }
+        } else if (!checkNum(scP)) {
+            System.out.println("Программа не выполнена!");
         }
     }
 
@@ -86,9 +99,8 @@ public class Homework3 {
 
     private static void task5() {
         System.out.println("Задание № 5");
-        Scanner sc = new Scanner(System.in);
         System.out.println("Введите порядковый номер месяца: ");
-        int scP = sc.nextInt();
+        int scP = scanNum();
         String month = switch (scP) {
             case 1 -> "месяц Январь, сезон Зима";
             case 2 -> "месяц Февраль, сезон Зима";
@@ -109,23 +121,23 @@ public class Homework3 {
 
     private static int scanNum() {
         Scanner sc = new Scanner(System.in);
-        int scP = sc.nextInt();
+        return sc.nextInt();
+    }
+    private static boolean checkNum(int scP) {
         if (scP < 100 || scP >= 1000) {
             System.out.println("Введено некорректное число, попробуйте снова!");
+            return false;
+        }else if (scP > 100 || scP <=999){
+            return true;
         }
-        return scP;
+        return true || false;
     }
-
-
     private static void print() {
         System.out.println("=========================================================");
         System.out.println("Задание выполнено, перехожу к выполнению следующей задачи!");
         System.out.println("=========================================================");
     }
 }
-
-
-
 
 
 
