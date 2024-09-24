@@ -48,23 +48,20 @@ public class Homework4 {
         int num2 = scanNum();
         System.out.println("Введите целое положительное число последовательности: ");
         int numPos = scanNum();
-        if (numPos <= 0) {
-            System.out.println("Вы ввели неправильное число N!");
-        }
-        int resultSum = 0;
-        for (int i = 1; i < numPos; ++i) {
+        while (numPos > 0) {
+
             numPos = num1 + num2;
             num1 = num2;
             num2 = numPos;
             System.out.println("Сумма первых чисел: " + num1 + " + " + num2 + " = " + (num2 + num1));
+            System.out.println("Сумма первых членов последовательности Фибоначи " + numPos);
         }
-        System.out.println("Сумма первых членов последовательности Фибоначи " + numPos);
+
     }
 
     private static void task4() {
         System.out.println("Task4: ");
         while (true) {
-            System.out.println("Task4: ");
             System.out.println("Введите число : ");
             int num = scanNum();
             if (num > 0) {
