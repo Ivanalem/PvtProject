@@ -9,7 +9,6 @@ public class Homework4 {
         task3();
         task4();
         task5();
-        exercise3();
     }
 
     private static void task1() {
