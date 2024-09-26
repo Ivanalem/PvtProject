@@ -64,7 +64,6 @@ public class Homework4 {
         } else {
             System.out.println("Неккоректное число N");
         }
-
     }
 
 
