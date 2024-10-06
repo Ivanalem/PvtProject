@@ -15,36 +15,34 @@ public class Homework5 {
 
     private static void task1() {
         System.out.println("Задача №1: ");
-        int massNum = scanNum();
-        if (numValid(massNum)) {
-            int[] mass = new int[massNum];
-            int res = 0;
-            int res2 = 0;
-            int res3 = 0;
-            int res4 = 0;
+        int massLength = scanNum();
+        if (numValid(massLength)) {
+            int[] mass = new int[massLength];
             System.out.println("Первая последовательность: ");
-            for (int i = 0; i < mass.length; i++) {
-                res2 += mass[i] + 2 * -1;
-                res = (res2 + 1) * (-1);
-
-                System.out.print(res + ", " + res2 + ", ");
+            for (int i = 1; i <= mass.length; i++) {
+                if (i % 2 == 0) {
+                    mass[i - 1] = -i;
+                } else {
+                    mass[i - 1] = i;
+                }
             }
+            System.out.print(Arrays.toString(mass));
             System.out.println("\nВторая последовательность: ");
-            for (int j = 0; j < mass.length; j++) {
-                res3 += mass[j] + 1;
-                res4 += mass[j];
-                System.out.print(res3 + ", " + res4 + ", ");
+            for (int j = 1; j <= mass.length; j += 2) {
+                mass[j - 1] = j / 2 + 1;
+                mass[j] = 0;
             }
-            System.out.println("Задача №1 завершена!");
+            System.out.print(Arrays.toString(mass));
+            System.out.println("\nЗадача №1 завершена!");
+        } else {
+            System.out.println("Программа не выполнена");
         }
-
     }
 
     private static void task2() {
         System.out.println("Задача №2: ");
         int massNum = scanNum();
         Random random = new Random();
-        int index = -1;
         if (numValid(massNum)) {
             int[] mass = new int[massNum];
             for (int i = 0; i < mass.length; i++) {
@@ -52,8 +50,7 @@ public class Homework5 {
             }
             System.out.println("Исходный массив: " + Arrays.toString(mass));
             for (int j = 0; j < mass.length; j++) {
-                index = j;
-                int result = index % 2;
+                int result = j % 2;
                 if (result == 0) {
                     mass[j] = 0;
                 }
@@ -68,7 +65,7 @@ public class Homework5 {
         System.out.println("Задача №3: ");
         int massNum = scanNum();
         Random random = new Random();
-        if (massNum > 4 || massNum < 4) {
+        if (massNum <= 0) {
             System.out.println("Введено некорректное число!");
         } else {
             int[] mass = new int[massNum];
@@ -76,13 +73,9 @@ public class Homework5 {
                 mass[i] = random.nextInt(10, 99);
             }
             System.out.println("Исходный массив: " + Arrays.toString(mass));
-            if (mass[0] < mass[1] && mass[1] < mass[2] && mass[2] < mass[3]) {
-                System.out.println("Данный массив со строго возрастающей последовательностью");
-            } else {
-                System.out.println("Данный массив не имеет строго возрастающей последовательности ");
-            }
-            System.out.println("Задача №3 завершена!");
+            isIncreasing(mass);
         }
+        System.out.println("Задача №3 завершена!");
     }
 
     private static void task4() {//доделать
@@ -134,6 +127,16 @@ public class Homework5 {
             System.out.println("Значение x отсутствует в массиве");
         }
         System.out.println("Задача №5 завершена!");
+    }
+
+    private static void isIncreasing(int[] mass) {
+        for (int j = 0; j < mass.length - 1; j++) {
+            if (mass[j] > mass[j + 1]) {
+                System.out.println("Данный массив не имеет строго возрастающей последовательности ");
+                return;
+            }
+        }
+        System.out.println("Данный массив со строго возрастающей последовательностью");
     }
 
 
