@@ -28,12 +28,14 @@ public class Airline extends Aircraft {
         return sumWeight;
     }
 
-    public void chooseAircraft(int enterParam, int enterParam2) {
+    public Aircraft[] chooseAircraft(int enterParam, int enterParam2) {
         for (Aircraft airline : numAircraft) {
-            if (airline.getWeight() > enterParam && airline.getWeight() < enterParam2) {
-                System.out.println("Подходящий самолет со следующими характеристиками: " + airline);
+            if (airline.getWeight() >= enterParam && airline.getWeight() <= enterParam2) {
+                System.out.println("Подходящий летательный аппарат: " + airline.getClass() + " с грузоподъемностью: "
+                        + airline.getWeight());
             }
         }
+        return getNumAirCraft();
     }
 
     @Override
@@ -42,4 +44,5 @@ public class Airline extends Aircraft {
                 " общая грузоподъемность: " + getFullWeight() +
                 ", общая вместимость: " + getFullCapacity() + '}';
     }
+
 }

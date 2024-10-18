@@ -64,12 +64,18 @@ public class Money {
         this.penn -= penn;
     }
 
-    public void isCompare(int rub, int penn) {
-        if(getRub() <= rub && getPenn() <= penn || getPenn() >= penn){
+    public boolean isCompare(int rub, int penn) {
+        int rubForPenn = getRub() * 10 + getPenn();
+        if(rubForPenn == rub * 10 + penn){
+            System.out.println("Суммы равны");
+            return true;
+        }
+        if (rubForPenn < rub * 10 + penn) {
             System.out.println("Введенное число больше текущего");
+            return true;
         } else {
             System.out.println("Введенное число меньше текущего");
-
+            return false;
         }
     }
 
