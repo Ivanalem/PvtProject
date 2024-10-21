@@ -1,2 +1,5 @@
-package task7;public class Task7 {
+package task7;
+
+public class Task7 {
+    
 }
