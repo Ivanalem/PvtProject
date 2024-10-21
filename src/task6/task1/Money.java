@@ -1,17 +1,11 @@
 package task6.task1;
 
-import java.util.Scanner;
-
 public class Money {
     private int rub;
     private int penn;
 
-    public static int enterNum() {
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextInt();
-    }
 
-    public static boolean numValid(int rub, int penn) {
+    public static boolean isNumValid(int rub, int penn) {
         if (rub < 0 || penn < 0 || penn >= 100) {
             System.out.println("Введено некорректное число");
             return true;
@@ -36,7 +30,7 @@ public class Money {
         return this.penn;
     }
 
-    public String isRub(int rub) {
+    public String printRub(int rub) {
         String str1 = "";
         if (rub % 2 == 0 || rub % 2 <= 6) {
             str1 = " рублей";
@@ -64,7 +58,7 @@ public class Money {
         this.penn -= penn;
     }
 
-    public boolean isCompare(int rub, int penn) {
+    public boolean isCompare(int penn, int rub) {
         int rubForPenn = getRub() * 10 + getPenn();
         if(rubForPenn == rub * 10 + penn){
             System.out.println("Суммы равны");
@@ -82,7 +76,7 @@ public class Money {
     @Override
     public String toString() {
         return "Текущая сумма составляет: " + getRub() +
-                "," + getPenn() + isRub(getRub()) + ", а именно: " + getRub() + isRub(getRub()) + " " + getPenn()
+                "," + getPenn() + printRub(getRub()) + ", а именно: " + getRub() + printRub(getRub()) + " " + getPenn()
                 + isPenn(getPenn()) + ".";
     }
 }

@@ -1,6 +1,6 @@
 package task6.task2;
 
-public class Airline extends Aircraft {
+public class Airline {
     Aircraft[] numAircraft;
 
     public Airline(Aircraft[] numAircraft) {
