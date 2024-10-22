@@ -16,7 +16,9 @@ public class Main {
         if (Aircraft.paramValid(enterNum)) {
             System.out.println("Введено некорректное число");
         } else {
-            airline.chooseAircraft(enterNum, Aircraft.enterParam());
+            airline.chooseAircraftForCapacity(enterNum, Aircraft.enterParam());
+            airline.chooseAircraftForWeight(enterNum, Aircraft.enterParam());
+
         }
     }
 }
