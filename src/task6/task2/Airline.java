@@ -28,11 +28,21 @@ public class Airline {
         return sumWeight;
     }
 
-    public Aircraft[] chooseAircraft(int enterParam, int enterParam2) {
+    public Aircraft[] chooseAircraftForWeight(int enterParam, int enterParam2) {
         for (Aircraft airline : numAircraft) {
             if (airline.getWeight() >= enterParam && airline.getWeight() <= enterParam2) {
                 System.out.println("Подходящий летательный аппарат: " + airline.getClass() + " с грузоподъемностью: "
                         + airline.getWeight());
+            }
+        }
+        return getNumAirCraft();
+    }
+    
+    public Aircraft[] chooseAircraftForCapacity(int enterParam, int enterParam2) {
+        for (Aircraft airline : numAircraft) {
+            if (airline.getCapacity() >= enterParam && airline.getCapacity() <= enterParam2) {
+                System.out.println("Подходящий летательный аппарат: " + airline.getClass() + " с грузоподъемностью: "
+                        + airline.getCapacity();
             }
         }
         return getNumAirCraft();
