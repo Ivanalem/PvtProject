@@ -52,5 +52,12 @@ public class Task7 {
         System.out.println("Введите строку: ");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
+      
+public class Task7 {
+   
+    public static void main(String [] args){
+     task1();
+     task2();
+     task3();
     }
 }
