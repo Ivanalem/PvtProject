@@ -62,14 +62,14 @@ public class Money {
         int rubForPenn = getRub() * 10 + getPenn();
         if(rubForPenn == rub * 10 + penn){
             System.out.println("Суммы равны");
-            return true;
+            return 0;
         }
         if (rubForPenn < rub * 10 + penn) {
             System.out.println("Введенное число больше текущего");
-            return true;
+            return 1;
         } else {
             System.out.println("Введенное число меньше текущего");
-            return false;
+            return -1;
         }
     }
 
