@@ -1,6 +1,5 @@
 package task7;
 
-<<<<<<< HEAD
 import java.util.Scanner;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
@@ -97,12 +96,5 @@ public class Task7 {
         System.out.println("Введите строку: ");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
-=======
-public class Task7 {
-    task1();
-    
-    public static void main(String [] args){
-        
->>>>>>> 6cfa847a631dd233b75f53fce85ed7ebba8e1032
     }
 }
