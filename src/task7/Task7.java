@@ -34,14 +34,20 @@ public class Task7 {
         int length = clean.length();
         int forward = 0;
         int backword = length - 1;
+        boolean isPalendrom = true;
         while (backword > forward) {
             char forwardChar = clean.charAt(forward++);
             char backwardChar = clean.charAt(backword--);
             if (forwardChar != backwardChar) {
-                System.out.println("Не является палиндромом");
+                isPalendrom = true;
             } else {
-                System.out.println("Является палиндромом");
+                isPalendrom = false;
             }
+        }
+        if(isPalendrom){
+            System.out.println("Не является палиндромом");
+        }else {
+            System.out.println("Является палиндромом");
         }
     }
 
