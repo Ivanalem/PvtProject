@@ -58,7 +58,7 @@ public class Money {
         this.penn -= penn;
     }
 
-    public boolean isCompare(int penn, int rub) {
+    public int isCompare(int penn, int rub) {
         int rubForPenn = getRub() * 10 + getPenn();
         if(rubForPenn == rub * 10 + penn){
             System.out.println("Суммы равны");
