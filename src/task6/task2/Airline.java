@@ -37,12 +37,12 @@ public class Airline {
         }
         return getNumAirCraft();
     }
-    
+
     public Aircraft[] chooseAircraftForCapacity(int enterParam, int enterParam2) {
         for (Aircraft airline : numAircraft) {
             if (airline.getCapacity() >= enterParam && airline.getCapacity() <= enterParam2) {
                 System.out.println("Подходящий летательный аппарат: " + airline.getClass() + " с грузоподъемностью: "
-                        + airline.getCapacity();
+                        + airline.getCapacity());
             }
         }
         return getNumAirCraft();
