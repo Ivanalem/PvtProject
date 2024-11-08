@@ -14,8 +14,17 @@ public class Task8 {
         keyMap.put(1234567, "Sergey");
         keyMap.put(12345678, "Sergey");
         task1(keyMap);
-        HashMap<String, ArrayList<Integer>> keyMapTask2 = new HashMap<>();
-        task2(keyMapTask2);
+        HashMap<String, List<Integer>> keyMapTask2 = new HashMap<>();
+        PhoneBook phoneBook = new PhoneBook(keyMapTask2);
+        phoneBook.addNumber(121, "Valentin", keyMapTask2);
+        phoneBook.addNumber(12, "Valentin", keyMapTask2);
+        phoneBook.addNumber(1234, "Valentin", keyMapTask2);
+        phoneBook.addNumber(12345, "Zora", keyMapTask2);
+        phoneBook.addNumber(12345, "Zora", keyMapTask2);
+        phoneBook.addNumber(1234567, "Sergey", keyMapTask2);
+        phoneBook.addNumber(123, "Danil", keyMapTask2);
+        phoneBook.addNumber(1239, "Danil", keyMapTask2);
+        System.out.println(phoneBook);
     }
 
     public static void task1(HashMap<Integer, String> keyMap) {
@@ -27,29 +36,5 @@ public class Task8 {
         System.out.println(keyMap);
         System.out.println(mapTask1);
         System.out.println("Конец работы task1!");
-    }
-
-    public static void task2(Map<String, ArrayList<Integer>> keyMapTask2) {
-        System.out.println("Начало работы task2: ");
-        addNumber(12, "Valentin",keyMapTask2);
-        addNumber(1234, "Valentin",keyMapTask2);
-        addNumber(12345, "Zora",keyMapTask2);
-        addNumber(12345, "Zora",keyMapTask2);
-        addNumber(1234567, "Sergey",keyMapTask2);
-        addNumber(123, "Danil",keyMapTask2);
-        addNumber(1239, "Danil",keyMapTask2);
-        System.out.print(keyMapTask2);
-        System.out.println();
-        System.out.println("Конец работы task2!");
-
-    }
-    public static void addNumber(int value,String key, Map<String, ArrayList<Integer>> keyMapTask2){
-        if (keyMapTask2.containsKey(key)) {
-            keyMapTask2.get(key).add(value);
-        } else {
-            ArrayList<Integer> list = new ArrayList<>();
-            list.add(value);
-            keyMapTask2.put(key, list);
-        }
     }
 }
