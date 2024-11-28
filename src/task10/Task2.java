@@ -10,12 +10,12 @@ public class Task2 {
         List<Object> myNewList = myList.stream()
                 .filter(m -> !m.contains("3"))
                 .sorted(Comparator.comparing(m -> m.charAt(1)))
-                .sorted(Comparator.comparing(m -> m.charAt(0)))
+                .skip(1)
+                .sorted(Comparator.comparing(m -> ((String)m).charAt(0)).reversed())
+                .skip(1)
                 .map(String::toUpperCase)
                 .peek(System.out::print)
                 .collect(Collectors.toList());
-        System.out.println(myList);
-
 
         System.out.println(Arrays.toString(myNewList.toArray()) + " " + myNewList.toArray().length);
     }
